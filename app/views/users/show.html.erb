@@ -1,0 +1,17 @@
+<%= @user.name %>, <%= @user.email %>
+<h1 class="pb-4">
+<%=gravatar_for @user%>
+<%=@user.name%>
+</h1>
+<p>
+  <strong>Current time:</strong>
+  <%= Time.now %>
+</p>
+<p>
+  <strong>Created at:</strong>
+  <%= @user.created_at %>
+</p>
+<p>
+  <strong>Updated at:</strong>
+  <%= @user.updated_at %>
+</p>
