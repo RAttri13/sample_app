@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
 
   def show
     @user = User.find(params[:id])
@@ -25,4 +26,8 @@ class UsersController < ApplicationController
     end
 
    
+=======
+  def new
+  end
+>>>>>>> c817fe7 (Finish layout and routes)
 end
