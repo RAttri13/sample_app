@@ -18,11 +18,16 @@ end
   def create
       @user = User.new(user_params)
       if @user.save
-        log_in @user  #to login in user once sign up
+        @user.send_activation_email
+        # UserMailer.account_activation(@user.email).deliver_now
+        flash[:info] ="Please check your email to activate your account."
+        redirect_to root_url
+       
+        # log_in @user  #to login in user once sign up
         
-        flash[:success]= "hello #{@user.name} welcome to the sample app "
+        # flash[:success]= "hello #{@user.name} welcome to the sample app "
         # redirect_to user_url(@user) and  redirect_to @user  #both are same 
-        redirect_to @user
+        # redirect_to @user
 
         # redirect_to "/users/id"
       else
