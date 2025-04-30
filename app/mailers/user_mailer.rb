@@ -1,9 +1,7 @@
-class UserMailer < SendGridMailer
+class UserMailer < ApplicationMailer
     def account_activation(user)
-      # debugger
       @user = user
-    # SendgridMailer.sendmail(user)
-
+      # @activation_link = edit_account_activation_url(user.email, user.activation_token)
       mail to: @user.email, subject: "Account activation"
     end
  

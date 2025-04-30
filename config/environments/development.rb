@@ -40,7 +40,8 @@ config.cache_classes = false
     port: 587,
     domain: 'localhost',
     user_name: 'apikey', 
-    password: ENV['SENDGRID_API_KEY'],
+    # password: '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',
+    password: Rails.application.credentials.dig(:sendgrid, :api_key),
     authentication: 'plain',
     enable_starttls_auto: true
   }
