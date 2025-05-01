@@ -32,7 +32,7 @@ config.cache_classes = false
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
-  # config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_deliveries = true
   # Enable the mailer to send emails in development.
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -40,8 +40,8 @@ config.cache_classes = false
     port: 587,
     domain: 'localhost',
     user_name: 'apikey', 
-    # password: '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',
-    password: Rails.application.credentials.dig(:sendgrid, :api_key),
+    password: Rails.application.credentials.dig(:sendgrid,:api_key),
+
     authentication: 'plain',
     enable_starttls_auto: true
   }
