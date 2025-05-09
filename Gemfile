@@ -1,23 +1,27 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.5'
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
+gem 'active_storage_validations', '0.8.2'
+# used to add validations to Active Storage attachments
+gem 'image_processing', '1.9.3'
+# to resize or crop image 
+gem 'mini_magick', '4.9.5'
+# Resize, crop, rotate, blur, or watermark images
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main' 
 gem 'rails', '~> 6.1.4', '>= 6.1.4.7'
-# Use sqlite3 as the database for Active Record
+# Use sqlite3 as the database for Active Record 
 gem 'sqlite3', '1.5'
 # bootstrap
 gem 'bootstrap-sass', '3.4.1'
-# Use Puma as the app server
+# Use Puma as the app server 
 gem 'puma', '~> 5.0'
-# Use SCSS for stylesheets
+# Use SCSS for stylesheets 
 gem 'sass-rails', '>= 6'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker 
 gem 'webpacker', '~> 5.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks 
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder 
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

@@ -1,17 +1,21 @@
-<%= @user.name %>, <%= @user.email %>
-<h1 class="pb-4">
-<%=gravatar_for @user%>
-<%=@user.name%>
-</h1>
-<p>
-  <strong>Current time:</strong>
-  <%= Time.now %>
-</p>
-<p>
-  <strong>Created at:</strong>
-  <%= @user.created_at %>
-</p>
-<p>
-  <strong>Updated at:</strong>
-  <%= @user.updated_at %>
-</p>
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1 class="pb-4">
+      <%=gravatar_for @user%>
+      <%=@user.name%>
+      </h1>
+    </section>
+  </aside>
+
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+    <h3>Microposts (<%= @user.microposts.count %>)</h3>
+    <ol class="microposts">
+      <%= render @microposts %>
+    </ol>
+    <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+</div>
