@@ -10,6 +10,6 @@ class Micropost < ApplicationRecord
       message: "should be less than 2MB" }
 
       def display_image
-        image.variant(resize_to_limit: [500, 500])
+        image.variant(resize_to_limit: [500, 500, gravity: 'north'])
       end
 end
